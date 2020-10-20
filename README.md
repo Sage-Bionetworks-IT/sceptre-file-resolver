@@ -22,7 +22,7 @@ parameters:
 Get file contents and pass it to the parameter as a json object:
 ```yaml
 parameters:
-  iam_policy: !file json /path/to/policy.json
+  iam_policy: !file /path/to/policy.json
 ```
 
 Get file contents and pass it to the sceptre_user_data as a yaml object:
