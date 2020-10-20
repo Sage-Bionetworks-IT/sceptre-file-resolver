@@ -23,7 +23,7 @@ class File(Resolver):
         Retrieves the contents of a file at a given absolute file path.
 
         :returns: Contents of file.
-        :rtype: (str, json, yaml) based on file extension
+        :rtype: str, or json/yaml parsed object based on file extension
         """
         try:
             file_path = self.argument
