@@ -73,6 +73,25 @@ class TestFileResolver(unittest.TestCase):
         expected = yaml.safe_load(file_content)
         self.assertDictEqual(result, expected)
 
+    def test_resolving_with_existing_valid_yml_file(self):
+        file_content = """
+            type: object
+            properties:
+              testing:
+                type: array
+                items:
+                  - A
+                  - B
+            """
+        with tempfile.NamedTemporaryFile(mode='w+', suffix='.yml') as f:
+            f.write(file_content)
+            f.seek(0)
+            self.file_resolver.argument = f.name
+            result = self.file_resolver.resolve()
+
+        expected = yaml.safe_load(file_content)
+        self.assertDictEqual(result, expected)
+
     def test_resolving_with_existing_invalid_yaml_file(self):
         file_content = """
           type: object
