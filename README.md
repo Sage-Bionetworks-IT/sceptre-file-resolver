@@ -1,3 +1,7 @@
+# This Sceptre resolver has moved to https://github.com/Sceptre/sceptre-file-resolver
+Further Development will continue there. 
+
+
 # File Resolver
 
 A Sceptre resolver to get file contents. The returned value that gets
